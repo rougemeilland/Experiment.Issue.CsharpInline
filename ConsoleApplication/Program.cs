@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using ClassLibrary;
 
 namespace ConsoleApplication
 {
     internal class Program
     {
+        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         static void Main(string[] args)
         {
             var x = 10;
