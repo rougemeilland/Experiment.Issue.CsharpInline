@@ -2,6 +2,9 @@
 
 namespace ClassLibrary
 {
+    // [Conclusion]
+    // Quick JIT is enabled by default, and JIT may not optimize enough.
+    // Adding "<TieredCompilationQuickJit>false</TieredCompilationQuickJit>" to the application's project file disables Quick JIT and also performs inlining.
     public static class SimpleCalc
     {
         public static int Add10(int x, int y)
@@ -199,7 +202,7 @@ namespace ClassLibrary
             return z;
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)] // <= The presence or absence of this attribute does not affect the problem
+        //[MethodImpl(MethodImplOptions.AggressiveInlining)] // <= The presence or absence of this attribute does not affect the problem
         private static int Add(int x, int y) => x + y;
     }
 }
